@@ -38,6 +38,7 @@ input, img, label, span {
 label:hover > img {
     max-height: 60vh;
     max-width: 60vh;
+    border: 0.1rem solid;
 }
 
 input {
@@ -49,6 +50,7 @@ input {
 input:checked ~ img {
     max-height: 60vh;
     max-width: 60vh;
+    border: 0.1rem solid;
 }
 
 img {
@@ -56,8 +58,8 @@ img {
     max-height: 0;
     max-width: 0;
     margin-bottom: 1rem;
-    border: 0.1rem solid;
-    transition: max-height .4s, max-width .4s
+    border: none;
+    transition: max-height .4s, max-width .4s ease .1s
 }
 
 span {
