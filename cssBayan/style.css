@@ -5,13 +5,18 @@
     padding: 0;
 }
 
+html {
+    font-size: 2.5vh;
+}
+
+
 body {
-    min-height: 80%;
+    min-width: 80%;
     font-size: 1.4rem;
     font-weight: bold;
     background: rgb(246, 234, 207);
-    color: rgb(112, 75, 25)
-
+    color: rgb(112, 75, 25);
+    overflow: scroll;
 }
 
 h1 {
@@ -25,45 +30,66 @@ h1 {
     width: 100vh;
     margin: 0 auto;
     background-color: #bba87bc0;
-    padding-bottom: 1rem;
+    padding: 0 2rem 1rem 2rem;
 }
 
-input, img, label, span {
-    display: block;
+.grid_container {
+    display: grid;
     margin: 0 auto;
-    text-align: center;
     cursor: pointer;
+    grid-template-columns: 0 1fr 2rem;
+    grid-template-rows: 3rem 1fr;
 }
 
-label:hover > img {
+.grid_container:hover > .item_4 {
     max-height: 60vh;
     max-width: 60vh;
     border: 0.1rem solid;
-    margin-bottom: 1rem;
+
 }
 
-input {
+.grid_container:hover > .item_3 {
+    transform: rotate(180deg);
+}
+
+.item_1 {
     appearance: none;
     width: 0;
     height: 0;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
-input:checked ~ img {
+.item_1:checked ~ .item_4 {
     max-height: 60vh;
     max-width: 60vh;
     border: 0.1rem solid;
-    margin-bottom: 1rem;
 }
 
-img {
+.item_1:checked ~ .item_3 {
+    transform: rotate(180deg);
+}
+
+.item_2 {
+    align-self: center;
+    cursor: pointer;
+}
+
+.item_3 {
+    justify-self: center;
+    align-self: center;
+    height: 1.4rem;
+    width: 1.4rem;
+    transition: transform .3s ease .2s;
+}
+
+.item_4 {
+    grid-column: 1 / 4;
+    justify-self: center;
+    cursor: pointer;
     max-height: 0;
     max-width: 0;
     border: none;
-    margin-bottom: 0;
-    transition: max-height .4s, max-width .4s, margin-bottom .4s  ease .2s
-}
-
-span {
-    padding: 1rem 0;
-    border-top: 0.1rem solid
+    transition: max-height .3s, max-width .3s ease .2s
 }
